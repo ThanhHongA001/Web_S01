@@ -1,38 +1,41 @@
+/* index.html */
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Giao diện đăng nhập</title>
-  <link rel="stylesheet" href="index.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Nhập</title>
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
-
-  <div class="container">
-    <h1>Trang Web Đăng Nhập</h1>
-    <h2>Đăng nhập</h2>
-
-    <div class="input-group">
-      <input type="text" placeholder="Tài khoản">
+    <div class="form-container">
+        <h2>Đăng Nhập</h2>
+        <input type="text" placeholder="Tài khoản" id="login-username">
+        <div class="password-container">
+            <input type="password" placeholder="Mật khẩu" id="login-password">
+            <img src="img/show_pass.png" id="toggle-password" onclick="togglePassword()">
+        </div>
+        <div class="btn-group">
+            <button onclick="login()">Đăng Nhập</button>
+            <button onclick="location.href='index_dangky.html'">Đăng Ký</button>
+        </div>
     </div>
 
-    <div class="input-group">
-      <input type="password" id="password" placeholder="Mật khẩu">
-      <span class="toggle-password" onclick="togglePassword()"></span>
-    </div>
-
-    <div class="buttons">
-      <button>Đăng nhập</button>
-      <button>Đăng ký</button>
-    </div>
-  </div>
-
-  <script>
-    function togglePassword() {
-      const passwordInput = document.getElementById("password");
-      const type = passwordInput.getAttribute("type") === "password" ? "text" : "password";
-      passwordInput.setAttribute("type", type);
-    }
-  </script>
-
+    <script>
+        function togglePassword() {
+            const passwordInput = document.getElementById('login-password');
+            const toggleIcon = document.getElementById('toggle-password');
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                toggleIcon.src = 'img/hide_pass.png';
+            } else {
+                passwordInput.type = 'password';
+                toggleIcon.src = 'img/show_pass.png';
+            }
+        }
+        function login() {
+            alert("Giả lập đăng nhập");
+        }
+    </script>
 </body>
 </html>

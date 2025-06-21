@@ -1,0 +1,35 @@
+/* index_dangky.html */
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Ký</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="form-container">
+        <h2>Đăng Ký</h2>
+        <input type="text" placeholder="Tài khoản" id="register-username">
+        <input type="text" placeholder="Mật khẩu" id="register-password">
+        <input type="text" placeholder="Nhập lại mật khẩu" id="register-confirm">
+        <div class="btn-group">
+            <button onclick="location.href='index.html'">Đăng Nhập</button>
+            <button onclick="register()">Đăng Ký</button>
+        </div>
+    </div>
+
+    <script>
+        function register() {
+            const pw = document.getElementById('register-password').value;
+            const confirm = document.getElementById('register-confirm').value;
+            if (pw === confirm && pw !== '') {
+                alert("Đăng ký thành công!");
+                location.href = 'index.html';
+            } else {
+                alert("Mật khẩu không khớp hoặc trống!");
+            }
+        }
+    </script>
+</body>
+</html>
